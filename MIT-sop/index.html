@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操作流程介紹</title>
+    <link rel="stylesheet"href="Style.css">
+    </style>
+</head>
+
+<body>
+
+<h1>操作流程介紹</h1>
+<ul>
+    <li class="flow-item"><a href="#content1" onclick="showContent(1)">10日缺口報表(自動化)</a></li>
+    <li class="flow-item"><a href="#content2" onclick="showContent(2)">LTA缺口報表(自動化)</a></li>
+    <li class="flow-item"><a href="#content3" onclick="showContent(3)">流程 3</a></li>
+    <li class="flow-item"><a href="#content4" onclick="showContent(4)">流程 4</a></li>
+    <li class="flow-item"><a href="#content5" onclick="showContent(5)">流程 5</a></li>
+</ul>
+
+<div id="content1"class="image-with-caption" ><!--10日缺口報表(自動化) -->
+      <h2 class="h2-title">10日缺口報表(自動化)</h2>
+
+      <h2>1.另存檔案</h2>
+      <p>每天收到原始檔(由客戶寄出,一般會由業務部轉寄給資材)</p>
+      <img src="Images\10日缺口\收到10日原檔.png"  title="收到10日原始檔" alt="收到10日原始檔" >
+      <p>另存到路徑 Z:\MAT\GARMIN\LTA及十日原始檔\十日</p>
+      <img src="Images\10日缺口\收到10日原檔的存檔路徑.png"  title="10日原始檔的存檔路徑" alt="10日原始檔的存檔路徑" >
+
+      <h2>2.轉檔</h2>
+      <p >到公司首頁>Logistics System>在左側列表找到0_10日工單轉檔>瀏覽…>選擇剛剛另存的Shortage原始檔 > 預覽 > 匯入 >匯入完後會出現轉出按鈕,點擊轉出 > 將轉換好的<span class="highlight-text-plan">.CSV檔另存</span></p>
+      <img src="Images\10日缺口\Logistics System.png"  title="Logistics System.png" alt="Logistics System.png" >
+      <img src="Images\10日缺口\0_10日工單轉檔.png"  title="0_10日工單轉檔.png" alt="0_10日工單轉檔.png" >
+      <img src="Images\10日缺口\10工單轉檔程式.png"  title="10工單轉檔程式.png" alt="10工單轉檔程式.png" >
+      <img src="Images\10日缺口\10工單轉檔程式2.png" style="width: 800px" title="10工單轉檔程式2" alt="10工單轉檔程式2" >
+
+      <h2>3.檔案上傳並執行MRP</h2>
+      <p>到公司首頁 B_MDS轉入程式 > 新增 > 瀏覽 > 選擇已轉成CSV檔的Shortage原始檔 > IMPORT > 並請耐心等待一段時間</p>
+      <P>下面的 grid view 會出現已經轉入的資料檢查資料是否都成功，如果有失敗的截圖發信給”業務”和”工程”</p>
+      <p>如果沒有問題 > 執行MRP(約等待半小時程式跑完) > 確認MRP執行完後到左側選單 > F_TGM MRP 資料轉檔for TGM1008/TGM1009>轉入</p>
+      <img src="Images\10日缺口\B_MDS轉入程式.png" style="width: 800px" title="B_MDS轉入程式" alt="B_MDS轉入程式" >
+      <span style="font-size:x-small;">Ps:這裡的MDS,標準MRP,基礎MRP都已經預設好名稱,如果是日常操作這裡不用更改,<br>
+        每次重新執行MRP會將上次執行的MRP刪除並做資料覆蓋,但如果是想測試,<br>
+        並不想覆蓋掉之前執行的資料,則必須更改名稱,並前往orcel手動設定(收動方式請參照10日缺口(手動)sop)</span>
+      <img src="Images\10日缺口\F_TGM MRP 資料轉檔 for TGM1008TGM1009.png" title="F_TGM MRP 資料轉檔 for TGM1008TGM1009" alt="F_TGM MRP 資料轉檔 for TGM1008TGM1009" >
+
+      <h2>4.整理報表</h2>
+      <p>打開10日分析的EXCEL > 重新整理(EXCEL2016約3分鐘/EXCEL365約20秒即可) > 轉出</p>
+      <img src="Images\10日缺口\10日分析.png" title="10日分析" alt="10日分析" >
+      <img src="Images\10日缺口\重新整理.png" title=重新整理" alt="重新整理" >
+      <img src="Images\10日缺口\轉出.png" title=轉出" alt="轉出" >
+        
+      <h2>5.另存新檔</h2>
+      <P>將檔案另存新檔(存檔類型設為.xlsb)</P>
+      <img src="Images\10日缺口\10日另存新檔.png" title=10日另存新檔" alt="10日另存新檔" >
+      <P>結束!</P>
+
+
+
+
+
+</div>
+<div id="content2" class="content">這裡是流程 2 的詳細介紹。</div>
+<div id="content3" class="content">這裡是流程 3 的詳細介紹。</div>
+<div id="content4" class="content">這裡是流程 4 的詳細介紹。</div>
+<div id="content5" class="content">這裡是流程 5 的詳細介紹。</div>
+
+<script>
+    function showContent(num) {
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById('content' + i).style.display = 'none';
+        }
+        document.getElementById('content' + num).style.display = 'block';
+    }
+
+    // 這個函數將頁面滾動到頂部
+    function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'  // 這將使滾動行為平滑
+    });
+    }
+
+// 添加事件監聽器到每個流程標籤
+    document.querySelectorAll('.flow-item a').forEach(function(item) {
+    item.addEventListener('click', function(event) {
+        // 防止默認的連結行為
+        event.preventDefault();
+
+        // 呼叫 scrollToTop 函數
+        scrollToTop();
+        
+        // 如果您仍然希望執行連結的其他行為，如顯示相應的內容，可以在這裡添加該代碼
+        // 例如: showContent(...)
+    });
+});
+</script>
+
+</body>
+
+</html>

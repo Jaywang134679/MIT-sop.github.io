@@ -1,0 +1,76 @@
+    /* 設定整體字體和背景顏色 */
+    body {
+        font-family: 'Arial Rounded MT Bold', sans-serif; /* 設定字體 */
+        background-color: rgb(234, 239, 240); /* 背景顏色 */
+    }
+
+    /* 設定標題h1的背景、邊距和文字顏色 */
+    h1 {
+        background-color: rgb(173, 216, 230); /* 設定背景顏色 */
+        padding: 10px; /* 設定邊距 */
+        color: white; /* 文字顏色 */
+        position: sticky;
+        top: 0;
+        z-index: 1000; /* 確保這些元素在其他內容之上 */
+    }
+
+    /* 設定標題h2的下邊距 */
+    h2 {
+        color: rgb(51, 51, 53); /* 文字顏色 */
+        margin-bottom: 10px; /* 設定下邊距 */
+
+    }
+
+    /* 設定無序列表ul的樣式 */
+    ul {
+        background-color: rgb(173, 216, 230); /* 設定背景顏色 */
+        list-style-type: none; /* 刪除點狀符號 */
+        display: flex; /* 使用flexbox佈局 */
+        justify-content: flex-start; /* 主軸靠左對齊 */
+        padding: 0; /* 刪除默認的邊距 */
+        font-size: 1.2em; /* 設定比h2小的字體大小 */
+        position: sticky;
+        top: 60px; /* h1 的高度為 60px */
+        z-index: 999;
+    }
+
+    /* 設定ul中的連結的樣式 */
+    ul a{
+        text-decoration: none; /* 去掉下劃線 */
+        color: white; /* 設定文字顏色 */
+    }
+
+    /* 隱藏.content區域的內容 */
+    .content {
+        display: none; /* 隱藏元素 */
+    }
+
+    /* 設定.flow-item的間隔和動畫效果 */
+    .flow-item {
+        margin-right: 20px; /* 設定右側邊距 */
+        transition: transform 0.3s; /* 設定動畫效果時間 */
+    }
+
+    /* 設定.flow-item滑鼠懸停時的放大效果 */
+    .flow-item:hover {
+        transform: scale(1.1); /* 設定放大比例 */
+    }
+
+    
+    .image-with-caption img {
+        display: block;
+        margin-top: 10px;  /* 上邊距 */
+        margin-bottom: 10px;  /* 下邊距 */
+    }
+    .highlight-text-plan{
+        color: rgb(223, 16, 16);
+        font-weight: bold;
+    }
+    .h2-title{
+        color: rgb(35, 35, 39); 
+        font-weight: bold; 
+        font-size: xx-large;
+    }
+
+
+    
